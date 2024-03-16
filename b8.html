@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav icon</title>
+  <style>
+    .nav-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+    }
+    .nav-list{
+      background-color: #fff;
+      display: flex;
+      border: #d7d7d7 solid;
+      border-radius: 10px;
+      padding: 0;
+      box-shadow: 2px 2px 20px rgb(255, 225, 225);
+    }
+    .nav-list__item{
+      position: relative;
+      
+      padding: 12px 16px;
+      list-style: none;     
+    }
+    
+     a{  
+      display: block;
+      background-image: url(sidemenu-icons.png);
+      height: 60px;
+      width: 60px;
+    }
+    .nav-list__item:nth-child(1) a{   
+      --vax: 0px;
+      background-position-y: var(--vax);
+    }
+    .nav-list__item:nth-child(2) a{   
+      --vax: -120px;
+      background-position-y: var(--vax);
+    }
+    .nav-list__item:nth-child(3) a{   
+      --vax: -240px;
+      background-position-y: var(--vax);
+    }
+    .nav-list__item:nth-child(4) a{   
+      --vax: -360px;   
+      background-position-y: var(--vax);
+    }
+    .nav-list__item:nth-child(5) a{   
+      --vax: -480px;
+      background-position-y: var(--vax);
+    }
+    .nav-list__item:hover a{
+      background-position-y: calc( var(--vax) - 60px);
+    }
+
+    .nav-list__item:nth-child(2) .img{
+      background-position-y: -120px ;
+    }
+    .nav-list__item:nth-child(3) .img{
+      background-position-y: -240px ;
+    }
+    .nav-list__item:nth-child(4) .img{
+      background-position-y: -360px ;
+    }
+    .nav-list__item:nth-child(5) .img{
+      background-position-y: -480px ;
+    }
+    .up{
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      z-index: -1;
+      top: -100px;
+      padding: 12px 16px;
+      background-color: antiquewhite;
+      top: 0px;
+      left: 0;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .img{
+      background-image: url(sidemenu-icons.png);
+      width: 60px;
+      height: 60px;
+    }
+    .nav-list__item:hover .up{
+      top: -80px;
+      transition: 0.3s linear;
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <nav class="nav-container">
+    <ul class="nav-list">
+      <li class="nav-list__item">
+        <div class="up"><div class="img"></div></div>
+        <a href=""></a>
+      </li>  
+      <li class="nav-list__item">
+        <div class="up"><div class="img"></div></div>
+        <a href=""></a>
+      </li>
+      <li class="nav-list__item">
+        <div class="up"><div class="img"></div></div>
+        <a href=""></a>
+      </li>
+      <li class="nav-list__item">
+        <div class="up"><div class="img"></div></div>
+        <a href=""></a>
+      </li>
+      <li class="nav-list__item">
+        <div class="up"><div class="img"></div></div>
+        <a href=""></a>
+      </li>
+      
+    </ul>
+  </nav>
+</body>
+</html>
