@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      background-color: rgb(176, 211, 152);
+    }
+    .container{
+      margin-top: 20%;
+      display: flex;
+      justify-content: end;
+
+      /* float: right; */
+    }
+    svg{
+      right:0;
+      bottom: 0;
+      position: absolute;
+      fill: rgb(33, 134, 33);
+      width: 75px;
+      transform: scaleY(3);
+      transform-origin: right;
+      /* transition: transform 1s  cubic-bezier(.83,-1.09,.42,.91) 0.2s ; */
+    }
+    svg:nth-child(2){
+      /* transform: scaleX(0); */
+      /* transform: scale(0.3, 2.7); */
+      transform: scale(0,0);
+    }
+    .nav{
+      position: relative;
+      height: 200px;
+      width: 100px;
+      
+    }
+    /* .nav:hover svg{
+      animation: danY .8s cubic-bezier(.83,-1.09,.42,.91) forwards ;
+    
+    } */
+    @keyframes danY{
+      0%{
+        transform: scaleY(3);
+      }
+      50%{
+        transform: scaleY(4);
+      }
+      100%{
+        transform: scaleY(4) scaleX(4);
+      }
+    }
+    
+    
+
+
+    
+  </style>
+</head>
+<body>
+    <div class="container">
+      <div class="nav">
+        <svg class="side_shape_front" viewBox="0 0 130 200" preserveAspectRatio="none">
+          <path class="side_shape_front_2" d="M130,200V0c0,31.9-87.8,45.3-87.8,100C42.2,151.7,130,172,130,200z"></path>                
+        </svg>
+        <svg   class="side_shape_front" viewBox="0 0 120 180" preserveAspectRatio="none">
+          <path fill="#fff" class="side_shape_front_2" d="M130,200V0c0,31.9-87.8,45.3-87.8,100C42.2,151.7,130,172,130,200z"></path>                
+        </svg>
+        
+       
+        
+    </div>
+    </div>
+</body>
+</html>
