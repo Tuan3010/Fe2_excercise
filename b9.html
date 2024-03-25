@@ -6,10 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    :root{
+      --x: -6px;
+    }
     body{
       margin: 0;
       padding: 0;
-      background-color: rgb(176, 211, 152);
+      background: url(7up1.webp);
+      background-repeat: no-repeat;
+      /* background-size: cover; */
+      /* height: 100vh; */
     }
     .container{
       margin-top: 20%;
@@ -19,61 +25,300 @@
       /* float: right; */
     }
     svg{
+      z-index: 1;
       right:0;
       bottom: 0;
       position: absolute;
-      fill: rgb(33, 134, 33);
+      fill: #add901;
+      
       width: 75px;
       transform: scaleY(3);
       transform-origin: right;
       /* transition: transform 1s  cubic-bezier(.83,-1.09,.42,.91) 0.2s ; */
+      animation-delay: 1s;
     }
     svg:nth-child(2){
-      /* transform: scaleX(0); */
-      /* transform: scale(0.3, 2.7); */
+      top: 73px;
       transform: scale(0,0);
+      fill: #fff;
+      animation-delay: 1s;
     }
     .nav{
       position: relative;
       height: 200px;
-      width: 100px;
+      width: 176px;
       
     }
-    /* .nav:hover svg{
-      animation: danY .8s cubic-bezier(.83,-1.09,.42,.91) forwards ;
+    .nav:hover svg:nth-child(1){
+      animation: scaleGreen 0.7s cubic-bezier(.83,-1.09,.42,1.5) forwards;
     
-    } */
-    @keyframes danY{
+    }
+    .nav:hover svg:nth-child(2){
+      animation: scaleWhite 0.7s cubic-bezier(.24,1.2,0,1) forwards ;
+      animation-delay: 0.5s;
+    }
+    /* Khi hover */
+    @keyframes scaleGreen{
       0%{
         transform: scaleY(3);
       }
       50%{
-        transform: scaleY(4);
+        transform: scaleY(4) scaleX(1);
       }
       100%{
-        transform: scaleY(4) scaleX(4);
+        transform: scaleY(4.5) scaleX(4);
+      }
+    }
+    @keyframes scaleWhite{
+      0%{
+        transform: scale(0,3.7);
+      }
+      
+      100%{
+        transform:  scale(4,3.7);
+      }
+    }
+    /* Bỏ hover */
+    @keyframes UnscaleGreen{
+      0%{
+        transform: scale(4,4.5);
+      }
+      50%{
+        transform: scale(3,3);
+        
+      }
+      
+      100%{
+        transform: scaleY(3) scaleX(1);
+      }
+    }
+    @keyframes UnscaleWhite{
+      0%{
+        transform:  scale(4,3.7)
+      }
+     
+      
+      100%{
+        transform:  scale(0,3.7)
+      }
+    }
+    /*  */
+    ul {
+        list-style-type: none; 
+        padding-left: 0; 
+        overflow: hidden;
+        padding-bottom: 100px;
+    }
+
+    ul li {
+      color: #a0a0a0;
+      text-align: right;
+      top: 70px;
+      z-index: 2;
+        right: -130px;
+        position: relative; /* Thiết lập vị trí tương đối cho mỗi phần tử */
+        padding-left: 20px; /* Tạo không gian để hiển thị hình tròn */
+        line-height: 30px; /* Chiều cao dòng */
+        height: 34px;   
+        transition: right 1.2s cubic-bezier(.45,-0.11,.33,1.26);
+    }
+    ul li:nth-child(1){
+      font-weight: 800;
+      color: rgb(79, 79, 79);
+    }
+    ul li::before {
+        content: '';
+        position: absolute; 
+        top: 50%; 
+        left: 8px;
+        transform: translateY(-50%); 
+        width: 7px; 
+        height: 7px;
+        border-radius: 50%; 
+        border: 2px solid rgb(255, 255, 255);
+        transition: left 0.9s cubic-bezier(.27,.16,.59,.85);
+        margin-right: 10px; 
+    }
+    ul li::after{
+      position: absolute;
+      content: "";
+      height: 27px;
+      width: 44px;
+    }
+
+    .dot {
+        content: '';
+        position: absolute;
+        top: 50%; 
+        right: -50px;
+        transform: translateY(-50%); 
+        width: 7px; 
+        height: 7px;
+        border-radius: 50%; 
+        border: 2px solid #add901;
+        margin-right: 10px; 
+    }
+
+    ul li:nth-child(1):before{
+      background-color: #fff;
+    }
+    ul li:nth-child(1) .dot{
+      background-color: #add901;
+    }
+    .nav:hover li:nth-child(1):before{
+      left: 400px;
+    }
+    .nav:hover li:nth-child(2):before{
+      left: 400px;
+      transition-delay: 0.04s;
+    }
+    .nav:hover li:nth-child(3):before{
+      left: 400px;
+      transition-delay: 0.08s;
+    }
+    .nav:hover li:nth-child(4):before{
+      left: 400px;
+      transition-delay: 0.12s;
+    }
+    /*  */
+    
+    .nav:hover li:nth-child(1){
+      transition-delay: 0s;
+      right: 62px;
+    }
+    .nav:hover li:nth-child(2){
+      transition-delay: 0.04s;
+      right: 62px;
+    }
+    .nav:hover li:nth-child(3){
+      transition-delay: 0.08s;
+      right: 62px;
+    }
+    .nav:hover li:nth-child(4){
+      transition-delay: 0.12s;
+      right: 62px;
+    }
+
+     li:hover{
+      animation: changeColorforLi 0.3s linear forwards;
+    }
+    @keyframes changeColorforLi{
+      0%{transform: translateX(0px);color: black; font-size: 18px; }
+      50%{transform: translateX(-3px);color: #178a00; font-size: 18px; }
+      100%{transform: translateX(-10px);color: #59e617; font-size: 18px; }
+    }
+    li:hover .dot{
+      right: -60px;
+      
+    }
+    .dot::after{
+      top: -2px;
+      left: -2px;
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      border: 2px solid #add901;
+      border-radius: 50%;
+    }
+    
+    li:hover .dot::after{
+      animation: scaleMiniBall .7s linear infinite;
+    }
+    @keyframes scaleMiniBall{
+      0%{
+        transform: scale(0);
+        opacity: 1;
+      }
+      100%{
+        transform: scale(4);
+        opacity: 0;
       }
     }
     
+     
+    /*
+    ul li:nth-child(1)::before{
+      background-color: #fff;
+    }
+    .nav:hover ul li:nth-child(2){
+      animation: dotZzac 0.6s cubic-bezier(.27,.16,.59,.85) 0.1s;
+    }
+    .nav:hover ul li:nth-child(3){
+      animation: dotZzac 0.6s cubic-bezier(.27,.16,.59,.85) 0.14s;
+    }
+    .nav:hover ul li:nth-child(4){
+      animation: dotZzac 0.6s cubic-bezier(.27,.16,.59,.85) 0.18s;
+    }
+    .nav:hover li:nth-child(1)::before{
+      transition: background-color 0.3s linear,border-color 0.3s linear ;
+      background-color: #add901;
+      border-color: #add901;
+    }
     
-
-
+    
+    @keyframes dotZzac{
+      0%{right: -80px;}
+      50%{right: -200px;}
+      100%{right: -80px; }
+    }
+    /* @keyframes dotZzac2{
+      0%{right: -70px;}
+      50%{right: -200px;}
+      100%{right: -70px; }
+    } */
+    
     
   </style>
 </head>
 <body>
     <div class="container">
-      <div class="nav">
-        <svg class="side_shape_front" viewBox="0 0 130 200" preserveAspectRatio="none">
+      <div onmouseleave="myFun(this)" class="nav">
+        <svg  class="side_shape_front" viewBox="0 0 130 200" preserveAspectRatio="none">
           <path class="side_shape_front_2" d="M130,200V0c0,31.9-87.8,45.3-87.8,100C42.2,151.7,130,172,130,200z"></path>                
         </svg>
-        <svg   class="side_shape_front" viewBox="0 0 120 180" preserveAspectRatio="none">
-          <path fill="#fff" class="side_shape_front_2" d="M130,200V0c0,31.9-87.8,45.3-87.8,100C42.2,151.7,130,172,130,200z"></path>                
+        <svg  class="side_shape_front" viewBox="0 0 130 200" preserveAspectRatio="none">
+          <path  class="side_shape_front_2" d="M130,200V0c0,31.9-87.8,45.3-87.8,100C42.2,151.7,130,172,130,200z"></path>                
         </svg>
-        
-       
-        
+         <ul>        
+            <li>7UP <span class="dot"></span></li>
+            <li>Producten <span class="dot"></span></li>
+            <li>Geschiedenis <span class="dot"></span></li>
+            <li>Recept <span class="dot"></span></li>
+         </ul>            
+      </div>
     </div>
-    </div>
+
+    <script>
+      function myFun(x,y) {
+        // Green
+        var svgElements = x.querySelectorAll("svg"); // Lấy phần tử svg bên trong div
+        var firstSvg = svgElements[0]; // Lấy phần tử SVG đầu tiên
+        firstSvg.style.animation = "UnscaleGreen 0.9s  cubic-bezier(.31,-0.31,.54,2)  ";
+        setTimeout(function() {
+            firstSvg.style.removeProperty("animation");
+        }, 1000);
+        //White
+        var secondSvg = svgElements[1];
+        secondSvg.style.animation = "UnscaleWhite 0.8s cubic-bezier(1,-0.35,0,1.33) ";
+        setTimeout(() => {
+            secondSvg.style.removeProperty("animation");
+        }, 1000);
+
+        // Dot list
+        var liElements = x.querySelectorAll("li::before");
+        var fourthLi = liElements[3]; //Lấy phần tử đầu của li để áp dụng animation bỏ hover
+        fourthLi.style.transitionDelay = "1s"
+
+        
+        // setTimeout(function() {       
+        //     fourthLi.style.removeProperty("transitionDelay");
+            
+        // }, 1000);
+
+    }
+
+    </script>
 </body>
 </html>
