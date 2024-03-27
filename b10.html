@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent_container{
+            perspective: 600px;
+          
+            margin-top: 300px;
+            margin-left: 300px;
+            height: 300px;
+            width: 200px;
+            border: 1px solid rgb(216, 78, 78);
+            pointer-events: none
+        }
+        .box{
+            position: relative;
+            background: rgba(100,100,100,0.5); 
+            height: 300px;
+            width: 200px;
+            /* transform: rotateY(40deg); */
+            border: 1px solid black;
+            transition: 1s linear;
+            pointer-events: auto
+        }
+        /* /* .box::before{
+            position: absolute;
+            content: '';
+            height: 300px;
+            width: 100px;
+            background-color: transparent;
+            
+        } */
+        .box::after{
+            right: 0;
+            position: absolute;
+            content: '';
+            height: 300px;
+            width: 100px;
+            background-color: red;
+        } 
+        .box:hover {
+            transform: rotateY(40deg)
+        }
+        /* .box::after{
+            transform: rotateY(40deg)
+        } */
+        
+    </style>
+</head>
+<body>
+    <div class="parent_container">
+        
+        <div class="box">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
